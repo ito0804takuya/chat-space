@@ -1,0 +1,19 @@
+@mixin separate() {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin name($font-size, $line-height, $color, $margin-top){
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  margin-top: $margin-top;
+}
+
+@mixin base($width, $height, $background-color){
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+}
