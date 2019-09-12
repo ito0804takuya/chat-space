@@ -1,0 +1,68 @@
+.header
+  .header__logo
+    グループを作成しました
+
+.wrapper
+  .wrapper__side
+    .wrapper__side__side-header
+      .wrapper__side__side-header__user-name
+        seo
+      .wrapper__side__side-header__btn
+        .wrapper__side__side-header__btn__edit
+          =link_to "" do
+            = fa_icon 'edit'
+        .wrapper__side__side-header__btn__cog
+          = fa_icon 'cog'
+
+    .wrapper__side__groups
+      .wrapper__side__groups__group
+        .wrapper__side__groups__group__name
+          sample-group
+        .wrapper__sside__groups__group__comment
+          hello!
+      .wrapper__side__groups__group
+        .wrapper__side__groups__group__name
+          sample-group
+        .wrapper__side__groups__group__comment
+          hello!
+      .wrapper__side__groups__group
+        .wrapper__side__groups__group__name
+          sample-group
+        .wrapper__side__groups__group__comment
+          hello!
+
+  .wrapper__main
+    .wrapper__main__main-header
+      .wrapper__main__main-header__name
+        .wrapper__main__main-header__name__group-name
+          sample-group
+        .wrapper__main__main-header__name__user-name
+          Member:test-user
+      .wrapper__main__main-header__btn
+        Edit
+    .wrapper__main__messages
+      .wrapper__main__messages__message
+        .wrapper__main__messages__message__data
+          .wrapper__main__messages__message__data__user
+            test-user1
+          .wrapper__main__messages__message__data__date
+            2019/09/01(Wed) 17:36:22
+        .wrapper__main__messages__message__text
+          hello!
+      .wrapper__main__messages__message
+        .wrapper__main__messages__message__data
+          .wrapper__main__messages__message__data__user
+            test-user2
+          .wrapper__main__messages__message__data__date
+            2019/09/01(Wed) 17:36:22
+        .wrapper__main__messages__message__text
+          hello!
+    .wrapper__main__form
+      .wrapper__main__form__input-box
+        .wrapper__main__form__input-box__text
+        = text_field_tag 'input', '', placeholder: "type a message"        
+      .wrapper__main__form__input-box__image
+        =link_to "" do
+          = fa_icon'image'
+      .wrapper__main__form__btn
+        Send
