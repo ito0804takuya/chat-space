@@ -8,12 +8,12 @@
 // @import "config/reset";
 // @import "mixins/mixin";
 // @import "mixins/vendor_prefix";
-// @import "modules/side_bar";
+@import "modules/side_bar";
 // @import "modules/chat";
 @import "modules/flash";
 @import "modules/group";
-// @import "modules/user";
-// @import "messages/messages.scss"
+@import "modules/user";
+// @import "messages/messages.scss";
 
 * {
   box-sizing: border-box;
