@@ -1,25 +1,7 @@
 $(function(){
   function buildHTML(message){
-    if (message.image) {
-      var html = `<div class="wrapper__main__messages__message" data-message-id=${message.id}>
-                    <div class="wrapper__main__messages__message__data">
-                      <div class="wrapper__main__messages__message__data__user">
-                        ${message.user_name}
-                      </div>
-                      <div class="wrapper__main__messages__message__data__date">
-                        ${message.date}
-                      </div>
-                    </div>
-                    <div class="wrapper__main__messages__message__text">
-                        <p class="lower-message__content">
-                          ${message.content}
-                        </p>
-                    </div>
-                    <img src=${message.image}>
-                  </div>`
-      return html; 
-    } else {
-      var html = `<div class="wrapper__main__messages__message" data-message-id=${message.id}>
+    var image = (message.image !== null) ? `<img src= "${message.image}">` : '';
+    var html = `<div class="wrapper__main__messages__message" data-message-id=${message.id}>
                   <div class="wrapper__main__messages__message__data">
                     <div class="wrapper__main__messages__message__data__user">
                       ${message.user_name}
@@ -33,10 +15,11 @@ $(function(){
                         ${message.content}
                       </p>
                   </div>
+                  ${image}
                 </div>`
-      return html; 
-    };
+    return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -51,9 +34,11 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
+      console.log(html);
       $('.wrapper__main__messages').append(html);
       $('.wrapper__main__messages').animate({scrollTop: $('.wrapper__main__messages')[0].scrollHeight}, 'fast');  
-      $('.form__message').val('');
+      $('form')[0].reset();
+      // $('#message_content').val();
     })
     .fail(function(){
       alert('エラー');
