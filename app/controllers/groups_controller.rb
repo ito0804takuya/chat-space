@@ -19,8 +19,6 @@ before_action :set_group, only: [:edit, :update]
   end
 
   def edit
-    # @a_users = @group.users
-    # @group.users = @group.user.where.not(id: current_user.id)
   end
 
   def update
