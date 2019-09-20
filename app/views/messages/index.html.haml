@@ -12,8 +12,7 @@
             - @group.users.each do |user|
               %li{:style => "float:left"} #{user.name}, 
       .wrapper__main__main-header__btn
-        = link_to edit_group_path(current_user) do
-          Edit
+        = link_to "Edit", edit_group_path(@group.id)
 
     .wrapper__main__messages
       =render @messages
