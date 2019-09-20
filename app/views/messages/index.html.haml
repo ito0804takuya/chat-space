@@ -5,11 +5,14 @@
     .wrapper__main__main-header
       .wrapper__main__main-header__name
         .wrapper__main__main-header__name__group-name
-          sample-group
+          = @group.name
         .wrapper__main__main-header__name__user-name
-          Member:test-user
+          %ul{:style => "list-style:none"}
+            %li{:style => "float:left"} Member :
+            - @group.users.each do |user|
+              %li{:style => "float:left"} #{user.name}, 
       .wrapper__main__main-header__btn
-        Edit
+        = link_to "Edit", edit_group_path(@group.id)
 
     .wrapper__main__messages
       =render @messages
@@ -22,11 +25,3 @@
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'
-    -# .form
-    -#   %form
-    -#     %input.form__message
-    -#     .form__mask
-    -#       %label.form__mask__image
-    -#         = fa_icon 'picture-o', class: 'icon'
-    -#         %input.hidden{type: 'file'}
-    -#     %input.form__submit{type: 'submit', value: 'Send'}
