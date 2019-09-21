@@ -43,28 +43,7 @@ $(function(){
       alert('エラー');
     });
     return false;
-  });
-
-  // var buildMessageHTML = function(message) {
-  //   var image = (message.image !== null) ? `<img src= "${message.image}">` : '';
-  //   var html = `<div class="wrapper__main__messages__message" data-message_id=${message.id}>
-  //                 <div class="wrapper__main__messages__message__data">
-  //                   <div class="wrapper__main__messages__message__data__user">
-  //                     ${message.user_name}
-  //                   </div>
-  //                   <div class="wrapper__main__messages__message__data__date">
-  //                     ${message.created_at}
-  //                   </div>
-  //                 </div>
-  //                 <div class="wrapper__main__messages__message__text">
-  //                     <p class="lower-message__content">
-  //                       ${message.content}
-  //                     </p>
-  //                 </div>
-  //                 ${image}
-  //               </div>`
-  //   return html;
-  // };
+  });ｓ
 
   var reloadMessages = function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
