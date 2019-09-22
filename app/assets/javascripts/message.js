@@ -43,7 +43,7 @@ $(function(){
       alert('エラー');
     });
     return false;
-  });ｓ
+  });
 
   var reloadMessages = function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
