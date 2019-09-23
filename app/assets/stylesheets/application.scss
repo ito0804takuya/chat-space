@@ -51,13 +51,16 @@
       &__btn {
         height: 40px;
         line-height: 40px;
-        font-size: 16px;
-        color: $LightBlue;
         text-align: center;
         border: solid 1px $LightBlue;
         padding: 0 20px;
         margin-top: 28px;
         margin-left: auto;
+        a {
+          color: $LightBlue;
+          font-size: 16px;
+          text-decoration-line: none;
+        }
       }    
     }
   

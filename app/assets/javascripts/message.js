@@ -37,7 +37,7 @@ $(function(){
       console.log(html);
       $('.wrapper__main__messages').append(html);
       $('.wrapper__main__messages').animate({scrollTop: $('.wrapper__main__messages')[0].scrollHeight}, 'fast');  
-      $('form').reset();
+      $('form')[0].reset();
     })
     .fail(function(){
       alert('エラー');
