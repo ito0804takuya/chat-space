@@ -34,7 +34,6 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      console.log(html);
       $('.wrapper__main__messages').append(html);
       $('.wrapper__main__messages').animate({scrollTop: $('.wrapper__main__messages')[0].scrollHeight}, 'fast');  
       $('form')[0].reset();
@@ -56,13 +55,13 @@ $(function(){
       })
       .done(function(messages) {
         var insertHTML = '';
-        if (message != null) {
         messages.forEach(function(message){
           insertHTML = buildHTML(message);
           $('.wrapper__main__messages').append(insertHTML);
-        });        
-        $('.wrapper__main__messages').animate({scrollTop: $('.wrapper__main__messages')[0].scrollHeight}, 'fast');  
-        }
+          if (message.id >= last_message_id) {
+            $('.wrapper__main__messages').animate({scrollTop: $('.wrapper__main__messages')[0].scrollHeight}, 'fast');  
+          }
+        });
       })
       .fail(function() {
         alert('エラー');
